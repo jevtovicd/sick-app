@@ -11,6 +11,8 @@
 	);
 
 	INSERT INTO Sickovci (name, last_name, level, age, date_added, date_modified)
-	VALUES ('Dejan', 'Jevtovic', 'PRO', 34, CURRENT_TIMESTAMP, NULL);
+	VALUES ('Dejan', 'Jevtovic', 'PRO', 34, CURRENT_DATE, CURRENT_DATE),
+	('Aleksandar', 'Davidov', 'PRO', 33, CURRENT_DATE, CURRENT_DATE),
+	('Nenad', 'Djordjevic', 'PRO', 33, CURRENT_DATE, CURRENT_DATE);
 
 

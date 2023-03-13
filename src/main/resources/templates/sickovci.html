@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Sick App</title>
+
+    <link rel="stylesheet" th:href="@{webjars/bootstrap/4.2.1/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="create">Create new Sickovac!</a>
+</nav>
+
+<main role="main" class="container">
+
+    <div class="starter-template">
+        <h1>Ovo je lista svih sikovaca:</h1>
+    </div>
+    
+    <table>
+
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Last Name</th>
+        <th>Sick Level</th>
+        <th>Age</th>
+        <th>Date Added</th>
+        <th>Date Modified</th>
+    </tr>
+
+    <tr th:each="task : ${allSikovci}">
+        <td th:text="${task.id}">id</td>
+        <td th:text="${task.name}">name</td>
+        <td th:text="${task.lastName}">lastName</td>
+        <td th:text="${task.level}">level</td>
+        <td th:text="${task.age}">age</td>
+        <td th:text="${task.dateAdded}">dateAdded</td>
+        <td th:text="${task.dateModified}">dateModified</td>
+    </tr>
+    
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    	<a class="navbar-brand" href="/api/sick">Home page!</a>
+	</nav>
+
+</table>
+
+</main>
+<!-- /.container -->
+
+<script type="text/javascript" th:src="@{webjars/bootstrap/4.2.1/js/bootstrap.min.js}"></script>
+</body>
+</html>
