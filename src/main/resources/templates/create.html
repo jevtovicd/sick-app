@@ -18,7 +18,12 @@
     <form action="#" th:action="@{/api/sick}" th:object="${sickovac}" method="post">
     	<p>Name: <input type="text" th:field="*{name}" /></p>
         <p>Last Name: <input type="text" th:field="*{lastName}" /></p>
-        <p>Level: <input type="text" th:field="*{level}" /></p>
+        <p>Level: 
+        <select th:field="*{level}">
+			<option value="">select level</option>
+			<option th:each="lvl : ${levels}" th:value="${lvl}" th:text="${lvl}"></option>
+		</select>
+        </p>
         <p>Age: <input type="text" th:field="*{age}" /></p>
         <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
     </form>

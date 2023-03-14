@@ -1,5 +1,8 @@
 package com.sickpack.sickovci.controller;
 
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import org.springframework.http.HttpStatus;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -15,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.servlet.ModelAndView;
+import com.sickpack.sickovci.model.Levels;
 import com.sickpack.sickovci.model.Sickovac;
 import com.sickpack.sickovci.repository.Repository;
 
@@ -59,6 +63,10 @@ public class SickController {
 	
 	@GetMapping("/create")
 	public ModelAndView createSickovac(Model model) {
+		List<String> lvl = Stream.of(Levels.values())
+                .map(Levels::name)
+                .collect(Collectors.toList());
+		model.addAttribute("levels", lvl);
 		model.addAttribute("sickovac", new Sickovac());
 		return new ModelAndView("create");
 	}

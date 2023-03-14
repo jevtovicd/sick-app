@@ -17,7 +17,7 @@ public class Sickovac {
 	private String name;
 	@Column("LAST_NAME")
 	private String lastName;
-	private Level level;
+	private String level;
 	private Integer age;
 	@Column("DATE_ADDED")
 	private LocalDateTime dateAdded;

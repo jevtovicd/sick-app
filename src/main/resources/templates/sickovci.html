@@ -32,7 +32,6 @@
         <th>Sick Level</th>
         <th>Age</th>
         <th>Date Added</th>
-        <th>Date Modified</th>
     </tr>
 
     <tr th:each="task : ${allSikovci}">
@@ -42,7 +41,6 @@
         <td th:text="${task.level}">level</td>
         <td th:text="${task.age}">age</td>
         <td th:text="${task.dateAdded}">dateAdded</td>
-        <td th:text="${task.dateModified}">dateModified</td>
     </tr>
     
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
